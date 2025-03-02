@@ -3,6 +3,7 @@
 -- require assets.DiceD6
 local DiceD6 = require("assets.DiceD6")
 
+-- check if the DiceD6 module was loaded
 if DiceD6 == nil then
     error("Failed to load DiceD6 module")
 end
