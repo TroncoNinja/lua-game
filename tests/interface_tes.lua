@@ -11,7 +11,7 @@ end
 -- create a new instance of the Interface class
 local interface = Interface:new()
 
--- create a player, enemy, rooms placeholder
+-- create a player, enemy, rooms, messages placeholder
 local player = {
     str = 10,
     dex = 10,
