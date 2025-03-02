@@ -31,7 +31,7 @@ local rooms = {
     "Dungeon",
     "Catacombs"
 }
-local message = "You are in a dark room, you can hear the sound of water dripping from the ceiling."
+local message = "You are in a dark room, you can hear the sound of water dripping from the ceiling.";
 local message2 = "the goblin rolls 2d6 and gets 7";
 local message3 = "the player rolls 2d6 and gets 12";
 
