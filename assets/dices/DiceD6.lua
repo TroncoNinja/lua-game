@@ -1,18 +1,13 @@
 DiceD6 = {}
-DiceD6.__index = DiceD6
 
-function DiceD6:new()
-    local instance = setmetatable({}, DiceD6)
-    instance.d6 = {
-        [1] = "⚀:1",
-        [2] = "⚁:2",
-        [3] = "⚂:3",
-        [4] = "⚃:4",
-        [5] = "⚄:5",
-        [6] = "⚅:6"
-    }
-    return instance
-end
+DiceD6.d6 = {
+    [1] = "⚀:1",
+    [2] = "⚁:2",
+    [3] = "⚂:3",
+    [4] = "⚃:4",
+    [5] = "⚄:5",
+    [6] = "⚅:6"
+}
 
 function DiceD6:rollDice(bonus)
     if bonus == nil then

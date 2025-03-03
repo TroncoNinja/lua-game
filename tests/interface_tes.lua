@@ -15,7 +15,8 @@ local interface = Interface:new()
 local player = {
     str = 10,
     dex = 10,
-    con = 10
+    con = 10,
+    weapon = "Sword"
 }
 local enemy = {
     name = "Goblin",

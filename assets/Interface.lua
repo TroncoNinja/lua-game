@@ -41,6 +41,8 @@ function Interface:write(player, enemy, message, rooms, roomIndex)
     dexText = dexText .. string.rep(" ", miniWindowSize - string.len(dexText));
     local conText = " HP:  ".. player.con;
     conText = conText .. string.rep(" ", miniWindowSize - string.len(conText));
+    local weaponText = " Weapon: ".. player.weapon;
+    weaponText = weaponText .. string.rep(" ", windowSize - 2 - string.len(weaponText));
 
     -- creation of the enemy stat strings for the interface
     local enemyText = " "..enemy.name;
@@ -56,6 +58,9 @@ function Interface:write(player, enemy, message, rooms, roomIndex)
     "║".."│"..dexText .."│".."│"..  enemyText           .."│".."│"..rm2Text .."│".."║\n" ..
     "║".."│"..conText .."│".."│"..  enemyHPText         .."│".."│"..rm3Text .."│".."║\n" ..
     "║".."└──────────────┘".."└────────────────────────────┘".."└──────────────┘".."║\n" ..
+    "║".."┌────────────────────────────────────────────────────────────┐"..        "║\n" ..
+    "║".."│"..weaponText                                            .."│"..        "║\n" ..
+    "║".."└────────────────────────────────────────────────────────────┘"..        "║\n" ..
     "╚".."══════════════════════════════════════════════════════════════"..        "╝\n" ..
     message.."\n";
 
