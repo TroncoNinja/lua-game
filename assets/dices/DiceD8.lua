@@ -12,13 +12,23 @@ DiceD8.d8 = {
 }
 
 function DiceD8:rollDice(bonus)
+    local result = {
+        value = math.random(1, 8),
+        dice = ""
+    }
+    result.dice = self.d8[result.value]
+    
     if bonus == nil then
-        return self.d8[math.random(1, 8)]
+        return result
     else
         if bonus < 0 then
-            return self.d8[math.random(1, 8)] .. " " .. bonus
+            result.value = result.value + bonus
+            result.dice = result.dice .. " -" .. math.abs(bonus)
+            return result
         else
-            return self.d8[math.random(1, 8)] .. " +" .. bonus
+            result.value = result.value + bonus
+            result.dice = result.dice .. " +" .. bonus
+            return result
         end
     end
 end

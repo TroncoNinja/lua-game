@@ -15,9 +15,25 @@ end
 -- test the weapon modules
 print("The player attacks with the:")
 print(Sword.name)  -- Print the name of the weapon
-print("Damage: " .. Sword:rollDamage())  -- Roll the dice for the weapon damage
+local result = Sword:rollDamage()
+print("Damage: " .. result.dice .. " Value: " .. result.value)  -- Roll the dice for the weapon damage
+
+-- add a bonus to the weapon
+Sword.bonus = 2
+print("\nThe player attacks with the:")
+print(Sword.name)  -- Print the name of the weapon
+local result = Sword:rollDamage()
+print("Damage: " .. result.dice .. " Value: " .. result.value)  -- Roll the dice for the weapon damage
 
 -- test the weapon modules
-print("The player attacks with the:")
+print("\nThe player attacks with the:")
 print(GreatSword.name)  -- Print the name of the weapon
-print("Damage: " .. GreatSword:rollDamage())  -- Roll the dice for the weapon damage
+local result = GreatSword:rollDamage()
+print("Damage: " .. result.dice .. " Value: " .. result.value)  -- Roll the dice for the weapon damage
+
+-- add a bonus to the weapon
+GreatSword.bonus = 1
+print("\nThe player attacks with the:")
+print(GreatSword.name)  -- Print the name of the weapon
+local result = GreatSword:rollDamage()
+print("Damage: " .. result.dice .. " Value: " .. result.value)  -- Roll the dice for the weapon damage

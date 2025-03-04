@@ -24,21 +24,33 @@ end
 
 -- test the Dice* class
 print("Rolling the dice without bonus:")
-print(DiceD6:rollDice())  -- Roll the dice without a bonus
-print(DiceD8:rollDice())  -- Roll the dice without a bonus
-print(DiceD10:rollDice()) -- Roll the dice without a bonus
+local result = DiceD6:rollDice()
+print(result.dice, result.value, "\n")  -- Roll the dice without a bonus
+local result = DiceD8:rollDice()
+print(result.dice, result.value, "\n")  -- Roll the dice without a bonus
+local result = DiceD10:rollDice()
+print(result.dice, result.value, "\n")  -- Roll the dice without a bonus
 
 print("Rolling the dice with a bonus of +5:")
-print(DiceD6:rollDice(5))  -- Roll the dice with a bonus of +5
-print(DiceD8:rollDice(5))  -- Roll the dice with a bonus of +5
-print(DiceD10:rollDice(5)) -- Roll the dice with a bonus of +5
+local result = DiceD6:rollDice(5)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of +5
+local result = DiceD8:rollDice(5)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of +5
+local result = DiceD10:rollDice(5)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of +5
 
 print("Rolling the dice with a bonus of +10:")
-print(DiceD6:rollDice(10))  -- Roll the dice with a bonus of +10
-print(DiceD8:rollDice(10))  -- Roll the dice with a bonus of +10
-print(DiceD10:rollDice(10)) -- Roll the dice with a bonus of +10
+local result = DiceD6:rollDice(10)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of +10
+local result = DiceD8:rollDice(10)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of +10
+local result = DiceD10:rollDice(10)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of +10
 
 print("Rolling the dice with a bonus of -1:")
-print(DiceD6:rollDice(-1))  -- Roll the dice with a bonus of -1
-print(DiceD8:rollDice(-1))  -- Roll the dice with a bonus of -1
-print(DiceD10:rollDice(-1)) -- Roll the dice with a bonus of -1
+local result = DiceD6:rollDice(-1)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of -1
+local result = DiceD8:rollDice(-1)
+print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of -1
+local result = DiceD10:rollDice(-1)
+print(result.dice, result.value)  -- Roll the dice with a bonus of -1

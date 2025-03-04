@@ -14,13 +14,23 @@ DiceD10.d10 = {
 }
 
 function DiceD10:rollDice(bonus)
+    local result = {
+        value = math.random(1, 10),
+        dice = ""
+    }
+    result.dice = self.d10[result.value]
+
     if bonus == nil then
-        return self.d10[math.random(1, 10)]
+        return result
     else
         if bonus < 0 then
-            return self.d10[math.random(1, 10)] .. " " .. bonus
+            result.value = result.value + bonus
+            result.dice = result.dice .. " -" .. math.abs(bonus)
+            return result
         else
-            return self.d10[math.random(1, 10)] .. " +" .. bonus
+            result.value = result.value + bonus
+            result.dice = result.dice .. " +" .. bonus
+            return result
         end
     end
 end
