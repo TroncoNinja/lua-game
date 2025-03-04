@@ -2,24 +2,22 @@
 
 -- require the weapon modules
 local Sword = require("assets.weapons.Sword")
+local GreatSword = require("assets.weapons.GreatSword")
 
 -- check if the weapon modules were loaded
 if Sword == nil then
     error("Failed to load Sword module")
 end
+if GreatSword == nil then
+    error("Failed to load GreatSword module")
+end
 
 -- test the weapon modules
 print("The player attacks with the:")
 print(Sword.name)  -- Print the name of the weapon
-print(Sword.damage:rollDice(Sword.bonus))  -- Roll the dice for the weapon damage
-print(Sword.damage:rollDice(5)) -- Roll the dice for the weapon damage with a bonus of +5
-
--- change the values of the weapon
-Sword.name = "Great Sword"
-Sword.bonus = 10
+print("Damage: " .. Sword:rollDamage())  -- Roll the dice for the weapon damage
 
 -- test the weapon modules
 print("The player attacks with the:")
-print(Sword.name)  -- Print the name of the weapon
-print(Sword.damage:rollDice(Sword.bonus))  -- Roll the dice for the weapon damage
-print(Sword.damage:rollDice(5)) -- Roll the dice for the weapon damage with a bonus of +5
+print(GreatSword.name)  -- Print the name of the weapon
+print("Damage: " .. GreatSword:rollDamage())  -- Roll the dice for the weapon damage
