@@ -13,6 +13,11 @@ This is a simple text-based game written in Lua. The game includes various modul
 │   │   └── DiceD8.lua
 │   ├── Interface.lua
 │   └── weapons
+│       ├── Axe.lua
+│       ├── GreatAxe.lua
+│       ├── GreatStaff.lua
+│       ├── GreatSword.lua
+│       ├── Staff.lua
 │       └── Sword.lua
 ├── docs
 │   ├── CHANGELOG.md
@@ -28,6 +33,7 @@ This is a simple text-based game written in Lua. The game includes various modul
 └── tests
     ├── dice_test.lua
     ├── interface_test.lua
+    ├── player_test.lua
     └── weapon_test.lua
 ```
 
@@ -42,6 +48,11 @@ This is a simple text-based game written in Lua. The game includes various modul
 ### Weapon Modules
 
 - **Sword**: Implements a sword weapon that uses a six-sided dice for damage.
+- **Great Sword**: Implements a great sword weapon that uses two six-sided dice for damage.
+- **Axe**: Implements an axe weapon that uses a eight-sided dice for damage.
+- **Great Axe**: Implements a great axe weapon that uses a twelve-sided dice for damage.
+- **Staff**: Implements an axe weapon that uses a six-sided dice for damage and has a bonus of +1.
+- **Great Staff**: Implements an axe weapon that uses a eight-sided dice for damage and has a bonus of +2.
 
 ### Interface Module
 
@@ -54,6 +65,7 @@ The `tests` directory contains test scripts for the various modules:
 - **dice_test.lua**: Tests the dice modules.
 - **interface_test.lua**: Tests the interface module.
 - **weapon_test.lua**: Tests the weapon modules.
+- **player_test.lua**: Tests the player module
 
 ## License
 

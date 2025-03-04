@@ -1,0 +1,36 @@
+# Lua
+*.luac
+
+# Compiled Object files
+*.obj
+*.o
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+
+# Packages
+*.tar.gz
+*.zip
+*.rar
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Directories
+node_modules/
+dist/
+build/
+
+# Visual Studio Code
+.vscode/
+.history/
+*.code-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
