@@ -53,4 +53,4 @@ print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of -1
 local result = DiceD8:rollDice(-1)
 print(result.dice, result.value, "\n")  -- Roll the dice with a bonus of -1
 local result = DiceD10:rollDice(-1)
-print(result.dice, result.value)  -- Roll the dice with a bonus of -1
+print(result.dice, result.value)        -- Roll the dice with a bonus of -1
