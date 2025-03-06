@@ -10,10 +10,6 @@ local displayMatrix = utils:buildMatrix(displayWidth, displayHeight)
 local displayBufferMatrix = {}
 local displayBufferRow = {}
 
-display.displayMatrix = displayMatrix
-display.displayWidth = displayWidth
-display.displayHeight = displayHeight
-
 -- utils functions
 function display:clearBufferRow()
     displayBufferRow = {}
@@ -34,6 +30,34 @@ function display:clear()
     else
         os.execute("clear");
     end  
+end
+
+function display:setHeight(value)
+    if type(value) == "number" then
+        displayHeight = value
+    else
+        error("Invalid input, expected number")
+    end
+end
+
+function display:setWidth(value)
+    if type(value) == "number" then
+        displayWidth = value
+    else
+        error("Invalid input, expected number")
+    end
+end
+
+function display:getHeight()
+    return displayHeight
+end
+
+function display:getWidth()
+    return displayWidth
+end
+
+function display:getMatrix()
+    return displayMatrix
 end
 -- end utils functions
 
