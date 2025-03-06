@@ -31,7 +31,8 @@ function display:clear()
         os.execute("clear");
     end  
 end
-
+-- end utils functions
+-- setters
 function display:setHeight(value)
     if type(value) == "number" then
         displayHeight = value
@@ -47,7 +48,8 @@ function display:setWidth(value)
         error("Invalid input, expected number")
     end
 end
-
+-- end setters
+-- getters
 function display:getHeight()
     return displayHeight
 end
@@ -59,7 +61,7 @@ end
 function display:getMatrix()
     return displayMatrix
 end
--- end utils functions
+-- end getters
 
 function display:customFill(char)
     self:clearBufferRow()
