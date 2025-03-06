@@ -13,9 +13,22 @@ end
 -- create a player, enemy, rooms, messages placeholder
 
 -- create a StatBlock
-local block = StatBlock(player)
+local block = StatBlock:build(player)
 
 -- check if the StatBlock was built
+display:inputToBufferMatrix(block)
+display:writeBufferMatrix(1, 1)
+display:output()
+
+os.execute("sleep 3")
+display:clear()
+
+player:setStrength(10)
+player:setDexterity(9)
+player:setConstitution(8)
+
+block = StatBlock:build(player)
+
 display:inputToBufferMatrix(block)
 display:writeBufferMatrix(1, 1)
 display:output()

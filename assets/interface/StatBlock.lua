@@ -1,13 +1,15 @@
 local utils = require("src.utils")
-local function StatBlock(player)
-    local block = {
-        "┌──────────────┐",
-        "│ STR:         │",
-        "│ DEX:         │",
-        "│ CON:         │",
-        "└──────────────┘"
-    }
 
+local StatBlock = {}
+local block = {
+    "┌──────────────┐",
+    "│ STR:         │",
+    "│ DEX:         │",
+    "│ CON:         │",
+    "└──────────────┘"
+}
+
+function StatBlock:build(player)
     local blockWidth = 16
     local stats = {
         str = player:getStrength(),
@@ -25,7 +27,7 @@ local function StatBlock(player)
         returnTable[i] = utils:stringToTable(block[i])
     end
 
-    return returnTable
+    return returnTable 
 end
 
 return StatBlock
