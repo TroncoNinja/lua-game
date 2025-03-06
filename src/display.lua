@@ -5,6 +5,7 @@ local display = {}
 local displayWidth = 64
 local displayHeight = 32
 
+local fillChar = " "
 local displayMatrix = utils:buildMatrix(displayWidth, displayHeight)
 local displayBufferMatrix = {}
 local displayBufferRow = {}
@@ -13,14 +14,19 @@ display.displayMatrix = displayMatrix
 display.displayWidth = displayWidth
 display.displayHeight = displayHeight
 
-function display:customDisplayMatrix(customMatrix)
-    displayMatrix = customMatrix
+-- utils functions
+function display:clearBufferRow()
+    displayBufferRow = {}
+end
+
+function display:clearBufferMatrix()
+    displayBufferMatrix = {}
 end
 
 function display:clear()
     for i = 1, displayHeight do
         for j = 1, displayWidth do
-            displayMatrix[i][j] = " "
+            displayMatrix[i][j] = fillChar
         end
     end
     if package.config:sub(1,1) == "\\" then
@@ -28,6 +34,14 @@ function display:clear()
     else
         os.execute("clear");
     end  
+end
+-- end utils functions
+
+function display:customFill(char)
+    self:clearBufferRow()
+    self:clearBufferMatrix()
+    fillChar = char
+    displayMatrix = utils:buildMatrix(displayWidth, displayHeight, fillChar)
 end
 
 function display:inputToBufferMatrix(inputMatrix)
@@ -39,7 +53,7 @@ function display:inputToBufferRow(inputRow)
         if i <= #inputRow then
             displayBufferRow[i] = inputRow:sub(i, i)
         else
-            displayBufferRow[i] = " "
+            displayBufferRow[i] = fillChar
         end
     end
 end    

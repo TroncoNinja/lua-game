@@ -17,9 +17,7 @@ local exampleMatrix = {
 
 local exampleRow = "Hello, World!"
 
-local customMatrix = utils:buildMatrix(64, 32, "x")
-local standardMatrix = utils:buildMatrix(64, 32, " ")
-display:customDisplayMatrix(customMatrix)
+display:customFill("x")
 
 -- test the display module
 display:output()
@@ -40,6 +38,16 @@ display:clear()
 --     end
 -- end
 
+display:inputToBufferRow(exampleRow)
+for y = 1, display.displayHeight do
+    display:writeBufferRow(y)
+    display:output()
+    print("Y: " .. y)
+    os.execute("sleep 0.5")
+    display:clear()
+end
+
+display:customFill("_")
 display:inputToBufferRow(exampleRow)
 for y = 1, display.displayHeight do
     display:writeBufferRow(y)
