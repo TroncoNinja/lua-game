@@ -27,7 +27,7 @@ print("Display #rows: " .. #display.displayMatrix)
 os.execute("sleep 3")
 display:clear()
 
--- To execute the test uncomment the following code
+-- To execute the tests uncomment the following code
 
 -- display:customFill("@")
 -- display:inputToBufferMatrix(exampleMatrix)
