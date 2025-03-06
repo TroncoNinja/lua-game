@@ -27,6 +27,9 @@ print("Display #rows: " .. #display.displayMatrix)
 os.execute("sleep 3")
 display:clear()
 
+-- To execute the test uncomment the following code
+
+-- display:customFill("@")
 -- display:inputToBufferMatrix(exampleMatrix)
 -- for y = 32, display.displayHeight do
 --     for x = 1, display.displayWidth do
@@ -38,22 +41,22 @@ display:clear()
 --     end
 -- end
 
-display:inputToBufferRow(exampleRow)
-for y = 1, display.displayHeight do
-    display:writeBufferRow(y)
-    display:output()
-    print("Y: " .. y)
-    os.execute("sleep 0.5")
-    display:clear()
-end
+-- display:inputToBufferRow(exampleRow)
+-- for y = 1, display.displayHeight do
+--     display:writeBufferRow(y)
+--     display:output()
+--     print("Y: " .. y)
+--     os.execute("sleep 0.5")
+--     display:clear()
+-- end
 
-display:customFill("_")
-display:inputToBufferRow(exampleRow)
-for y = 1, display.displayHeight do
-    display:writeBufferRow(y)
-    display:output()
-    print("Y: " .. y)
-    os.execute("sleep 0.5")
-    display:clear()
-end
+-- display:customFill("_")
+-- display:inputToBufferRow(exampleRow)
+-- for y = 1, display.displayHeight do
+--     display:writeBufferRow(y)
+--     display:output()
+--     print("Y: " .. y)
+--     os.execute("sleep 0.5")
+--     display:clear()
+-- end
 
