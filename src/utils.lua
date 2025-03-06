@@ -17,17 +17,22 @@ function utils:checkPlayerName(stringIn)
 end
 
 function utils:buildMatrix(width, height, char)
-    if char == nil then
-        char = ' '
-    end
     local matrix = {}
     for i = 1, height do
         matrix[i] = {}
         for j = 1, width do
-            matrix[i][j] = char
+            matrix[i][j] = char or " "
         end
     end
-    return matrix 
+    return matrix
+end
+
+function utils:stringToTable(string)
+    local table = {}
+    for i = 1, string.len(string) do
+        table[i] = string:sub(i, i)
+    end
+    return table
 end
 
 return utils

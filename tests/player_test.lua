@@ -19,10 +19,22 @@ if player == nil then
 end
 
 -- Test the player module
-print("setting Player name by code")
+print("setting Player name to 'Giocatore'")
 player:setName("Giocatore")
-print("Player name: " .. player.name)
+print("Player name: " .. player:getName())
 
-print("\nsetting Player name by input")
-player:setName()
-print("Player name: " .. player.name)
+print("setting Player strength to 10")
+player:setStrength(10)
+print("Player strength: " .. player:getStrength())
+
+print("setting Player dexterity to 10")
+player:setDexterity(10)
+print("Player dexterity: " .. player:getDexterity())
+
+print("setting Player constitution to 10")
+player:setConstitution(10)
+print("Player constitution: " .. player:getConstitution())
+
+print("setting Player weapon to Sword")
+player:setWeapon(Sword)
+print("Player weapon: " .. player:getWeapon().name)
