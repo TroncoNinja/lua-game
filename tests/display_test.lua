@@ -29,14 +29,23 @@ print("Display #rows: " .. #display.displayMatrix)
 os.execute("sleep 3")
 display:clear()
 
-display:inputToBufferMatrix(exampleMatrix)
+-- display:inputToBufferMatrix(exampleMatrix)
+-- for y = 32, display.displayHeight do
+--     for x = 1, display.displayWidth do
+--         display:writeBufferMatrix(x, y)
+--         display:output()
+--         print("X: " .. x .. " Y: " .. y)
+--         os.execute("sleep 0.5")
+--         display:clear()
+--     end
+-- end
+
+display:inputToBufferRow(exampleRow)
 for y = 1, display.displayHeight do
-    for x = 1, display.displayWidth do
-        display:writeBufferMatrix(x, y)
-        display:output()
-        os.execute("sleep 0.1")
-        print("X: " .. x .. " Y: " .. y)
-        display:clear()
-    end
+    display:writeBufferRow(y)
+    display:output()
+    print("Y: " .. y)
+    os.execute("sleep 0.5")
+    display:clear()
 end
 

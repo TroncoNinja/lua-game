@@ -35,7 +35,13 @@ function display:inputToBufferMatrix(inputMatrix)
 end
 
 function display:inputToBufferRow(inputRow)
-    displayBufferRow = inputRow
+    for i = 1, displayWidth do
+        if i <= #inputRow then
+            displayBufferRow[i] = inputRow:sub(i, i)
+        else
+            displayBufferRow[i] = " "
+        end
+    end
 end    
 
 function display:writeBufferRow(posY)
@@ -43,7 +49,7 @@ function display:writeBufferRow(posY)
         error("Invalid input, expected posY to be within display bounds")
     end
 
-    for i = 1, #displayBufferRow do
+    for i = 1, displayWidth do
         displayMatrix[posY][i] = displayBufferRow[i]
     end
 
