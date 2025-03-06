@@ -3,18 +3,31 @@ local utils = require("src.utils")
 local display = {}
 
 local displayWidth = 64
-local displayHeight = 64
+local displayHeight = 32
 
-local displayMatrix = utils:buildMatrix(displayHeight, displayWidth)
+local displayMatrix = utils:buildMatrix(displayWidth, displayHeight)
 local displayBufferMatrix = {}
 local displayBufferRow = {}
+
+display.displayMatrix = displayMatrix
+display.displayWidth = displayWidth
+display.displayHeight = displayHeight
+
+function display:customDisplayMatrix(customMatrix)
+    displayMatrix = customMatrix
+end
 
 function display:clear()
     for i = 1, displayHeight do
         for j = 1, displayWidth do
-            displayMatrix[i][j] = ""
+            displayMatrix[i][j] = " "
         end
     end
+    if package.config:sub(1,1) == "\\" then
+        os.execute("cls");
+    else
+        os.execute("clear");
+    end  
 end
 
 function display:inputToBufferMatrix(inputMatrix)
@@ -43,7 +56,11 @@ function display:writeBufferMatrix(posX, posY)
 
     for i = 1, #displayBufferMatrix do
         for j = 1, #displayBufferMatrix[i] do
-            displayMatrix[posY + i - 1][posX + j - 1] = displayBufferMatrix[i][j]
+            if posX + j - 1 > displayWidth or posY + i - 1 > displayHeight then
+                -- out of bounds writing
+            else
+                displayMatrix[posY + i - 1][posX + j - 1] = displayBufferMatrix[i][j]
+            end
         end
     end
 end

@@ -16,12 +16,15 @@ function utils:checkPlayerName(stringIn)
     end
 end
 
-function utils:buildMatrix(height, width)
+function utils:buildMatrix(width, height, char)
+    if char == nil then
+        char = ' '
+    end
     local matrix = {}
     for i = 1, height do
         matrix[i] = {}
         for j = 1, width do
-            matrix[i][j] = ""
+            matrix[i][j] = char
         end
     end
     return matrix 

@@ -1,7 +1,8 @@
 -- Tests for the display module
 
--- require src.display
+-- require src.display and src.utils
 local display = require("src.display")
+local utils = require("src.utils")
 
 -- check if the display module was loaded
 if display == nil then
@@ -16,5 +17,26 @@ local exampleMatrix = {
 
 local exampleRow = "Hello, World!"
 
+local customMatrix = utils:buildMatrix(64, 32, "x")
+local standardMatrix = utils:buildMatrix(64, 32, " ")
+display:customDisplayMatrix(customMatrix)
+
 -- test the display module
+display:output()
+print("Expected: 64x32 display with all x")
+print("Display #columns: " .. #display.displayMatrix[1])
+print("Display #rows: " .. #display.displayMatrix)
+os.execute("sleep 3")
+display:clear()
+
+display:inputToBufferMatrix(exampleMatrix)
+for y = 1, display.displayHeight do
+    for x = 1, display.displayWidth do
+        display:writeBufferMatrix(x, y)
+        display:output()
+        os.execute("sleep 0.1")
+        print("X: " .. x .. " Y: " .. y)
+        display:clear()
+    end
+end
 
