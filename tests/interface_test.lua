@@ -20,7 +20,7 @@ end
 local block = StatBlock:build(player)
 
 local roomTable = {
-    index = 2,
+    index = 3,
     values = {
         "Room 1",
         "Room 2",

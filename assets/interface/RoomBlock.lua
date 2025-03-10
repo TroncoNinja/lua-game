@@ -14,14 +14,14 @@ local blockWidth = 16
 function RoomBlock:build(roomTable)
     local blockWidth = 16
     local rooms = {
-        roomTable[roomTable.index - 1] or "",
-        roomTable[roomTable.index],
-        roomTable[roomTable.index + 1] or ""
+        roomTable.values[roomTable.index - 1] or "",
+        roomTable.values[roomTable.index],
+        roomTable.values[roomTable.index + 1] or ""
     }
    
-    block[2] = "│ " .. rooms[1] .. string.rep(" ", blockWidth - 2 - #rooms[1]) .. "│"
-    block[3] = "│ » " ..rooms[2] .. string.rep(" ", blockWidth - 4 - #rooms[2]) .. "│"
-    block[4] = "│ " .. rooms[3] .. string.rep(" ", blockWidth - 2 - #rooms[3]) .. "│"
+    block[2] = "│ " .. rooms[1] .. string.rep(" ", blockWidth - 3 - #rooms[1]) .. "│"
+    block[3] = "│ » " ..rooms[2] .. string.rep(" ", blockWidth - 5 - #rooms[2]) .. "│"
+    block[4] = "│ " .. rooms[3] .. string.rep(" ", blockWidth - 3 - #rooms[3]) .. "│"
 
     local returnTable = {}
 
