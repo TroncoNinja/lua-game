@@ -51,3 +51,21 @@ block = RoomBlock:build(roomTable)
 display:inputToBufferMatrix(block)
 display:writeBufferMatrix(1, 1)
 display:output()
+
+display:clear()
+
+roomTable.index = 1
+block = RoomBlock:build(roomTable)
+
+display:inputToBufferMatrix(block)
+display:writeBufferMatrix(1, 1)
+display:output()
+
+display:clear()
+
+roomTable.index = 3
+block = RoomBlock:build(roomTable)
+
+display:inputToBufferMatrix(block)
+display:writeBufferMatrix(1, 1)
+display:output()

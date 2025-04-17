@@ -9,8 +9,9 @@ local block = {
     "└──────────────┘"
 }
 
+local blockWidth = 16
+
 function StatBlock:build(player)
-    local blockWidth = 16
     local stats = {
         str = player:getStrength(),
         dex = player:getDexterity(),
